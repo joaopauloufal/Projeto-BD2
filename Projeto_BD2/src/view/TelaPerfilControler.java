@@ -1,14 +1,10 @@
 package view;
 
-import application.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 public class TelaPerfilControler extends GridPane {
-	
-	private Main main;
-	
 	
 	@FXML
 	private Label lblIdValor;

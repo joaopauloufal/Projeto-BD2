@@ -5,14 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane prefHeight="378.0" prefWidth="505.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<BorderPane prefHeight="378.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaTabelaAmigosController">
    <center>
-      <TableView prefHeight="396.0" prefWidth="534.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="amigosTabela" prefHeight="396.0" prefWidth="534.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="120.0" text="ID" />
-          <TableColumn prefWidth="205.0" text="Nome" />
-            <TableColumn prefWidth="179.0" text="Perfil ID" />
+          <TableColumn fx:id="idColuna" prefWidth="120.0" text="ID" />
+          <TableColumn fx:id="nomeColuna" prefWidth="205.0" text="Nome" />
+            <TableColumn fx:id="idPefilColuna" prefWidth="179.0" text="Perfil ID" />
         </columns>
       </TableView>
    </center>

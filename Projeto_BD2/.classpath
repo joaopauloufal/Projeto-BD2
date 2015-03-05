@@ -38,5 +38,6 @@
 	<classpathentry kind="lib" path="lib/hibernate/required/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="lib/facebook4j-core-2.2.2.jar"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.27-bin.jar"/>
+	<classpathentry kind="lib" path="lib/openjfx-dialogs-1.0.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

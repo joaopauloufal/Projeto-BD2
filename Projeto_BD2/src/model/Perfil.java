@@ -120,10 +120,7 @@ public class Perfil {
 
 	@Override
 	public String toString() {
-		return "Perfil [id=" + id + ", primeiroNome=" + primeiroNome
-				+ ", ultimoNome=" + ultimoNome + ", statusRelacionamento="
-				+ statusRelacionamento + ", localidade=" + localidade
-				+ ", aniversario=" + aniversario + ", genero=" + genero + "]";
+		return id;
 	}
 	
 	

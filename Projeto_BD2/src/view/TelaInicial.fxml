@@ -20,8 +20,8 @@
             <Menu mnemonicParsing="false" text="Listar">
               <items>
                 <MenuItem fx:id="menuItemExibirPerfil" mnemonicParsing="false" onAction="#menuExibirPerfilEvent" text="Exibir Perfil..." />
-                  <MenuItem fx:id="menuItemListarAmigos" mnemonicParsing="false" text="Listar Amigos..." />
-                  <MenuItem fx:id="menuItemListarPosts" mnemonicParsing="false" text="Listar Posts..." />
+                  <MenuItem fx:id="menuItemListarAmigos" mnemonicParsing="false" onAction="#exibirTelaTabelaAmigosEvent" text="Listar Amigos..." />
+                  <MenuItem fx:id="menuItemListarPosts" mnemonicParsing="false" onAction="#exibirTelaTabelaPostsEvent" text="Listar Posts..." />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Postar">
@@ -38,7 +38,7 @@
       </MenuBar>
    </top>
    <center>
-      <ImageView fitHeight="327.0" fitWidth="541.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fx:id="image" fitHeight="327.0" fitWidth="541.0" onMouseClicked="#salvarDadosFacebookNoBanco" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../../images/facebook.jpg" />
          </image>
