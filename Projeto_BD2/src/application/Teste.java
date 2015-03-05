@@ -18,8 +18,10 @@ public class Teste {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("facebook_fql");
 		EntityManager em = factory.createEntityManager();
 		Facebook facebook = new FacebookFactory().getInstance();
+		
 		facebook.setOAuthAppId("1374466546173686", "b0f45627d18948c1a6eaa1aa3ccd08ad");
 		facebook.setOAuthAccessToken(new AccessToken("CAACEdEose0cBAJFhNkXIbfZA7AXiSpA4XxSZBvThU54uYio9CzROFDtZCjCxkn6Q9ZAdSle5R2bNRgZCARcmfTIDpBzCLySkaK8vJZB4ZB2ZB1WvMZCTzZBRr6ZCyJtxJFGjoiNUasUWc9b8acpVy8P3zwmD8QcJVOX9EJKPfZBaR99MroJQ13lAvHjn3Bxav7c5JsTpG3sKZAideMqzYYHTlDRg2"));
+		
 		Perfil meuPerfil = new Perfil();
 		try {
 			meuPerfil.setId(facebook.getMe().getId());

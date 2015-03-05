@@ -2,10 +2,8 @@ package view;
 
 import application.Main;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 
 public class TelaPerfilControler extends GridPane {
 	
@@ -35,8 +33,6 @@ public class TelaPerfilControler extends GridPane {
 	@FXML
 	private Label lblGeneroValor;
 	
-	@FXML
-	private Button btnOk;
 	
 	private TelaIncialController controller;
 	

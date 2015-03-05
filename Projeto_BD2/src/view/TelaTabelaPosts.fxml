@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane prefHeight="442.0" prefWidth="618.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <center>
+      <TableView prefHeight="428.0" prefWidth="568.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="123.0" text="Post ID" />
+          <TableColumn prefWidth="187.0" text="User ID" />
+            <TableColumn prefWidth="307.0" text="Corpo" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

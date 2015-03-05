@@ -2,6 +2,7 @@ package application;
 	
 import java.io.IOException;
 
+import dao.ConexaoDAO;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -49,6 +50,7 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
+		new ConexaoDAO();
 		launch(args);
 	}
 }
