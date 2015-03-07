@@ -32,7 +32,7 @@ public class TelaPostagemController {
 	private void btnPostarEvent(){
 		Facebook facebook = new FacebookFactory().getInstance();
 		facebook.setOAuthAppId("1374466546173686", "b0f45627d18948c1a6eaa1aa3ccd08ad");
-		facebook.setOAuthAccessToken(new AccessToken("CAACEdEose0cBAAJVODk9nEcBNNtVFZCVldBcldg0ZC4rVlnb3KUJiG6A2bU6YZBpgPAH5DAdKB34xyZCar1NaJtMSnHEZCyQ9nV2016eg9CZAimoFKypKEoEXZBUhZCkUFVEysGTY1Mj1IDBSDY2zhITZAgCGllRVrZAf4s03Ae4vnpZCleZAxrygIQFcAtipo2K2omdzlfrHQz1H17vZBkDvpdpI"));
+		facebook.setOAuthAccessToken(new AccessToken("CAACEdEose0cBACBnx0BmHe0GuBVgvIOMSa5HAhjlCWA1S4ZBggbalZAEagP6cUuTF3koL88QNv5xzOAk3nsKoeNTX6LfrEyz0ejRAB6IJEitp2ZBfagcF7EXHTUWZBHBmyD0x02Vk0NLjKgcZBrZCCr3ey0dtei9gN9ZBz1xNvv18ZBFhYZAFYtb31uZARxyfmfK130s6SGITT5SzXhQIm1xYW"));
 		
 		try {
 			facebook.postStatusMessage(txtTexto.getText());

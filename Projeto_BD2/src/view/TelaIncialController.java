@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import dao.PerfilDAO;
 import model.Amigo;
 import model.Perfil;
 import model.Post;
@@ -76,25 +77,23 @@ public class TelaIncialController {
 		try {
 			GridPane telaExibirPerfil = (GridPane) loader.load();
 			TelaPerfilControler controller = loader.getController();
-			Facebook facebook = new FacebookFactory().getInstance();
-			facebook.setOAuthAppId("1374466546173686", "b0f45627d18948c1a6eaa1aa3ccd08ad");
-			facebook.setOAuthAccessToken(new AccessToken("CAATiEe49hvYBABnuWLn4uMq9NvZB6p081OKioMFgGcwnDBAD676k1aNyZAX14ABrFdrAs8wuxaMWqtQZBYzBszxdeQ1ftT2HsPiWUBPmmNe3fhq8BSujcME1ZBe5HaCFrmjAwZCWQuyz7eCiCwHXU1V4t89JL3I5KGTRZBjIPlkOPfGwn9YVdvyrqeZBT8fnrgRaY2KvYqix7bWs6bjmAUQ"));
 			
-			try {
-				controller.getLblIdValor().setText(facebook.getMe().getId());
-				controller.getLblPrimeiroNomeValor().setText(facebook.getMe().getFirstName());
-				controller.getLblUltimoNomeValor().setText(facebook.getMe().getLastName());
-				controller.getLblAniversarioValor().setText(facebook.getMe().getBirthday());
-				controller.getLblGeneroValor().setText(facebook.getMe().getGender());
-				controller.getLblStatusRelacionamentoValor().setText(facebook.getMe().getRelationshipStatus());
-				controller.getLblLocalidadeValor().setText(facebook.getMe().getLocale().toString());
-			} catch (FacebookException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			PerfilDAO pDao = new PerfilDAO();
+			
+			Perfil p = pDao.retornaPerfil();
+			
+			controller.getLblIdValor().setText(p.getId());
+			controller.getLblPrimeiroNomeValor().setText(p.getPrimeiroNome());
+			controller.getLblUltimoNomeValor().setText(p.getUltimoNome());
+			controller.getLblAniversarioValor().setText(p.getAniversario());
+			controller.getLblGeneroValor().setText(p.getGenero());
+			controller.getLblStatusRelacionamentoValor().setText(p.getStatusRelacionamento());
+			controller.getLblLocalidadeValor().setText(p.getLocalidade());
 			controller.setController(this);
 			Scene scene = new Scene(telaExibirPerfil);
+			scene.getStylesheets().add("/application/application.css");
 			Stage stage = new Stage();
+			
 			stage.setScene(scene);
 			stage.setTitle("Exibir Perfil");
 			stage.initModality(Modality.APPLICATION_MODAL);
@@ -115,6 +114,7 @@ public class TelaIncialController {
 			TelaPostagemController controller = loader.getController();
 			controller.setController(this);
 			Scene scene = new Scene(telaPostagem);
+			scene.getStylesheets().add("/application/application.css");
 			Stage stage = new Stage();
 			stage.setTitle("Postar Status");
 			stage.setScene(scene);
@@ -144,6 +144,7 @@ public class TelaIncialController {
 			controller.setController(this);
 			Scene scene = new Scene(telaTabelaAmigos);
 			Stage stage = new Stage();
+			scene.getStylesheets().add("/application/application.css");
 			stage.setTitle("Lista de Amigos");
 			stage.setScene(scene);
 			stage.show();
@@ -163,6 +164,7 @@ public class TelaIncialController {
 			TelaTabelaPostsController controller = loader.getController();
 			controller.setController(this);
 			Scene scene = new Scene(telaTabelaPosts);
+			scene.getStylesheets().add("/application/application.css");
 			Stage stage = new Stage();
 			stage.setTitle("Lista de Postagens");
 			stage.setScene(scene);
@@ -181,7 +183,7 @@ public class TelaIncialController {
 		Facebook facebook = new FacebookFactory().getInstance();
 		
 		facebook.setOAuthAppId("1374466546173686", "b0f45627d18948c1a6eaa1aa3ccd08ad");
-		facebook.setOAuthAccessToken(new AccessToken("CAACEdEose0cBAAJVODk9nEcBNNtVFZCVldBcldg0ZC4rVlnb3KUJiG6A2bU6YZBpgPAH5DAdKB34xyZCar1NaJtMSnHEZCyQ9nV2016eg9CZAimoFKypKEoEXZBUhZCkUFVEysGTY1Mj1IDBSDY2zhITZAgCGllRVrZAf4s03Ae4vnpZCleZAxrygIQFcAtipo2K2omdzlfrHQz1H17vZBkDvpdpI"));
+		facebook.setOAuthAccessToken(new AccessToken("CAACEdEose0cBACBnx0BmHe0GuBVgvIOMSa5HAhjlCWA1S4ZBggbalZAEagP6cUuTF3koL88QNv5xzOAk3nsKoeNTX6LfrEyz0ejRAB6IJEitp2ZBfagcF7EXHTUWZBHBmyD0x02Vk0NLjKgcZBrZCCr3ey0dtei9gN9ZBz1xNvv18ZBFhYZAFYtb31uZARxyfmfK130s6SGITT5SzXhQIm1xYW"));
 		
 		Perfil meuPerfil = new Perfil();
 		try {
@@ -236,6 +238,15 @@ public class TelaIncialController {
 		em.getTransaction().commit();
 		em.close();
 		factory.close();
+	}
+	
+	@FXML
+	private void menuSobreEvent(){
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Sobre o Facebook FQL FX");
+		alert.setHeaderText("Versão 1.0 \nDesenvolvedores:");
+		alert.setContentText("João Paulo e Danilo Costa.");
+		alert.showAndWait();
 	}
 	
 	

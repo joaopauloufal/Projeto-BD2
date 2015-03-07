@@ -19,7 +19,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			this.primaryStage = primaryStage;
-			this.primaryStage.setTitle("Facebook FQL");
+			this.primaryStage.setTitle("Facebook FQL FX 1.0");
 			initRootLayout();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -33,6 +33,7 @@ public class Main extends Application {
 			rootLayout = (BorderPane) loader.load();
 			
 			Scene scene = new Scene(rootLayout);
+			scene.getStylesheets().add("/application/application.css");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			

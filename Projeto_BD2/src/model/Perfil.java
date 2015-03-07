@@ -12,7 +12,7 @@ import javax.persistence.Transient;
 import javafx.collections.ObservableList;
 
 @Entity
-@Table(name = "Perfis")
+@Table(name = "Perfil")
 public class Perfil {
 	
 	@Id
